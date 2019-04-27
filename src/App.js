@@ -59,12 +59,17 @@ class App extends Component {
                 onChange={this.handleInputChange}
                 placeholder="Enter a task"
                 className="form-control"
+                data-testid="todo-input"
               />
             </div>
           </div>
           <div className="row">
             <div className="col-md-6">
-              <button type="submit" className="btn btn-primary">
+              <button
+                type="submit"
+                className="btn btn-primary"
+                data-testid="add-task"
+              >
                 Add Task
               </button>
             </div>
@@ -80,7 +85,7 @@ class App extends Component {
                   No task!
                 </div>
               ) : (
-                <ul>
+                <ul data-testid="todos-ul">
                   {this.state.list.map(item => {
                     return (
                       <li key={item.id}>
